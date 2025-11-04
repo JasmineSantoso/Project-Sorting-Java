@@ -1,24 +1,42 @@
 import java.util.Random;
 
 public class kelompokJEA {
+    // public static void bubbleSort(DoubleLL list){
+    //     int i = list.getSize();
+    //     boolean swapped = true;
+    //     while ((i > 0) && (swapped)){
+    //         Node j = list.head;
+    //         swapped = false;
+    //         while (j.next != list.tail) {
+    //             if (j.data > j.next.data){
+    //                 list.swapByData(j.data, j.next.data);
+    //                 swapped = true;
+    //             }
+    //             j = j.next;
+    //         }
+    //         i--;
+    //     }        
+    // }
+
     public static void bubbleSort(DoubleLL list){
-        int i = list.getSize();
-        boolean swapped = true;
-        while ((i > 0) && (swapped)){
-            Node j = list.head;
+         if (list.head == null) return;
+
+        boolean swapped;
+        Node end = null;
+
+        do {
             swapped = false;
-            while (j.next != null) {
-                if (j.data > j.next.data){
-                    list.swapByData(j.data, j.next.data);
-                    // int temp = j.data;
-                    // j.data = j.next.data;
-                    // j.next.data = temp;
+            Node current = list.head;
+
+            while (current.next != end) {
+                if (current.data > current.next.data) {
+                    list.swapByData(current.data, current.next.data);
                     swapped = true;
                 }
-                j = j.next;
+                current = current.next;
             }
-            i--;
-        }        
+            end = current; // node terakhir sudah diurutkan
+        } while (swapped);
     }
 
     public static void selectionSort(Node head){
@@ -58,3 +76,22 @@ public class kelompokJEA {
         list2.printList();        
     }
 }
+
+//  if (list.head == null) return;
+
+//         boolean swapped;
+//         Node end = null;
+
+//         do {
+//             swapped = false;
+//             Node current = list.head;
+
+//             while (current.next != end) {
+//                 if (current.data > current.next.data) {
+//                     list.swapByData(current, current.next);
+//                     swapped = true;
+//                 }
+//                 current = current.next;
+//             }
+//             end = current; // node terakhir sudah diurutkan
+//         } while (swapped);
