@@ -34,12 +34,14 @@ public class DoubleLL {
         while(nodeA != null && nodeA.data != data1){
             nodeA = nodeA.next;
         }
-        while(nodeB.data != data2 && nodeB != null){
+        while(nodeB.data != data2 && nodeB != null ){
             nodeB = nodeB.next;
         }
+        if (nodeA !=null && nodeB !=null){
         int temp = nodeA.data;
         nodeA.data = nodeB.data;
         nodeB.data = temp;
+        }
     }  
 
     public int getSize(){

@@ -1,23 +1,6 @@
 import java.util.Random;
 
 public class kelompokJEA {
-    // public static void bubbleSort(DoubleLL list){
-    //     int i = list.getSize();
-    //     boolean swapped = true;
-    //     while ((i > 0) && (swapped)){
-    //         Node j = list.head;
-    //         swapped = false;
-    //         while (j.next != list.tail) {
-    //             if (j.data > j.next.data){
-    //                 list.swapByData(j.data, j.next.data);
-    //                 swapped = true;
-    //             }
-    //             j = j.next;
-    //         }
-    //         i--;
-    //     }        
-    // }
-
     public static void bubbleSort(DoubleLL list){
          if (list.head == null) return;
 
@@ -59,39 +42,24 @@ public class kelompokJEA {
         DoubleLL list2 = new DoubleLL();
         //KelompokJEA sort = new KelompokJEA();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 100; i++) {
             list1.addTail(rand.nextInt(100));
         }
+        System.out.println("UNSORTED");
         list1.printList();
 
+        System.out.println(" SELECTION SORTED");
         selectionSort(list1.head);
         list1.printList();
 
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 100; i++) {
             list2.addTail(rand.nextInt(100));
         }
+        System.out.println("UNSORTED");
         list2.printList();
 
+        System.out.println(" BUBBLE SORTED");
         bubbleSort(list2);
         list2.printList();        
     }
 }
-
-//  if (list.head == null) return;
-
-//         boolean swapped;
-//         Node end = null;
-
-//         do {
-//             swapped = false;
-//             Node current = list.head;
-
-//             while (current.next != end) {
-//                 if (current.data > current.next.data) {
-//                     list.swapByData(current, current.next);
-//                     swapped = true;
-//                 }
-//                 current = current.next;
-//             }
-//             end = current; // node terakhir sudah diurutkan
-//         } while (swapped);
