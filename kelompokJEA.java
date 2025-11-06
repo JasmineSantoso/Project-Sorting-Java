@@ -2,24 +2,22 @@ import java.util.Random;
 
 public class kelompokJEA {
     public static void bubbleSort(DoubleLL list){
-         if (list.head == null) return;
-
-        boolean swapped;
-        Node end = null;
-
+        boolean swapped = false;
         do {
+            Node temp = list.head;
+            Node next = list.head.next;
             swapped = false;
-            Node current = list.head;
-
-            while (current.next != end) {
-                if (current.data > current.next.data) {
-                    list.swapByData(current.data, current.next.data);
+            while (next != null) {
+                if (temp.data > next.data) {
+                    int data1 = temp.data;
+                    temp.data = next.data;
+                    next.data = data1;
                     swapped = true;
                 }
-                current = current.next;
+                temp = temp.next;
+                next = temp.next;
             }
-            end = current; // node terakhir sudah diurutkan
-        } while (swapped);
+        } while (swapped != false);
     }
 
     public static void selectionSort(Node head){
