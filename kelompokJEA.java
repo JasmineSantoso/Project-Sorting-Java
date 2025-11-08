@@ -47,8 +47,12 @@ public class kelompokJEA {
         list1.printList();
 
         System.out.println(" SELECTION SORTED");
+        
+        long start = System.nanoTime();
         selectionSort(list1.head);
+        long end = System.nanoTime();
         list1.printList();
+        System.out.printf("Waktu eksekusi     : %.8f detik\n", (end - start) / 1e9);
 
         for (int i = 0; i < 100; i++) {
             list2.addTail(rand.nextInt(100));
@@ -57,7 +61,10 @@ public class kelompokJEA {
         list2.printList();
 
         System.out.println(" BUBBLE SORTED");
+        start = System.nanoTime();
         bubbleSort(list2);
-        list2.printList();        
+        end = System.nanoTime();
+        list2.printList(); 
+        System.out.printf("Waktu eksekusi     : %.8f detik\n", (end - start) / 1e9);       
     }
 }
